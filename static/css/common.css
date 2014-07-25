@@ -1,0 +1,70 @@
+body {
+	position: relative;
+}
+
+#background {
+	width: 100%;
+	height: auto;
+	display: block;
+	position: absolute;
+	z-index: 1;
+}
+
+#content {
+	margin-top: 120px;
+	width: 100%;
+	display: block;
+	position: absolute;
+	z-index: 30;
+}
+
+#per_info {
+	display: block;
+	float: left;
+	position: relative;
+}
+
+#per_info_content {
+	position: absolute;
+	z-index: 35;
+	margin-top: 75px;
+	margin-left: 60px;
+}
+
+#photo {
+	border-radius: 5px;
+}
+
+#per_info img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+}
+
+#name {
+	margin-top: 150px;
+}
+
+.per_text {
+	margin-left: 1px;
+	font-family: cursive;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#blog_info {
+	display: block;
+	float: right;
+	position: relative;
+}
+
+.nav_text {
+	font-family: cursive;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#blog_background {
+	margin-top: 70px;
+	position: absolute;
+}
