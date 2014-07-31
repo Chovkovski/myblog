@@ -5,9 +5,13 @@
 		<meta charset="utf-8">
 		<link href="../static/img/favicon.ico" type="image/x-icon" rel="icon">
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../static/css/audioplayer.css">
+		<link rel="stylesheet" href="../static/css/reveal.css">
 		<link rel="stylesheet" href="../static/css/common.css">
 		<script src="../static/js/jquery.js"></script>
 		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../static/js/audioplayer.js"></script>
+		<script src="../static/js/jquery.reveal.js"></script>
 		<script src="../static/js/common.js"></script>
 	</head>
 	<body>
@@ -48,7 +52,7 @@
 							<div class="col-md-1 col-md-offset-2">
 								<div class="nav">
 									<img id="tag1" src="../static/img/tag1.png" class="img-responsive tags">
-									<ul id="tag1_nav">
+									<ul id="tag1_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
 									</ul>
 								</div>
@@ -56,7 +60,7 @@
 							<div class="col-md-1">
 								<div class="nav">
 									<img id="tag2" src="../static/img/tag2.png" class="img-responsive tags">
-									<ul id="tag2_nav">
+									<ul id="tag2_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
 										<li>情感之路</li>
 										<li>散文杂记</li>
@@ -67,7 +71,7 @@
 							<div class="col-md-1">
 								<div class="nav">
 									<img id="tag3" src="../static/img/tag3.png" class="img-responsive tags">
-									<ul id="tag3_nav">
+									<ul id="tag3_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
 										<li>编程语言</li>
 										<li>Web开发</li>
@@ -84,7 +88,7 @@
 							<div class="col-md-1">
 								<div class="nav">
 									<img id="tag4" src="../static/img/tag4.png" class="img-responsive tags">
-									<ul id="tag4_nav">
+									<ul id="tag4_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
 										<li>伤情</li>
 										<li>中国风</li>
@@ -96,20 +100,224 @@
 							<div class="col-md-1">
 								<div class="nav">
 									<img id="tag5" src="../static/img/tag5.png" class="img-responsive tags">
-									<ul id="tag5_nav">
+									<ul id="tag5_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
-										<li>旅程拾影</li>
+										<li>旅程纪念</li>
 										<li>同学少年</li>
 										<li>工作掠影</li>
+										<li>大千世界</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div id="blog_content" class="row">
 							<div class="col-md-7 col-md-offset-1">
+								<!--tag1_blog start-->
+								<div id="tag1_blog" class="tag_blogs">
+									<div class="state">
+										<p class="state_text">告别世界杯，迎来新赛季~期待蓝军可以有好的成绩~</p>
+										<p class="date">2014年07月14日</p>
+									</div>
+									<div class="state">
+										<p class="state_text">在火车上看了张艺谋的《我的父亲母亲》，简单的故事情节，却差点泪奔······终于知道章子怡为什么可以一炮而红，这部片里的演绎真的相当到位。</p>
+										<p class="date">2014年06月27日</p>
+									</div>
+									<div class="state">
+										<p class="state_text">现在越来越觉得闽南语的一些经典老歌相当让人回味无穷······《花香》、《家后》，一首唱给母亲，一首唱给爱人，无论是歌词还是旋律，都透出那个时代人们的价值观和对音乐的追求。现在这样子的歌好难遇到了······</p>
+										<p class="date">2014年05月31日</p>
+									</div>
+									<div class="state">
+										<p class="state_text">风居住的街道······矶村由纪子的曲子让人听了很舒服······</p>
+										<p class="date">2014年05月30日</p>
+									</div>
+									<div class="state">
+										<p class="state_text">从微博上看到说今晚《舌尖上的中国》第二季要播出了······各位吃货们准备好吧······</p>
+										<p class="date">2014年04月18日</p>
+									</div>
+									<div id="tag1_page" class="page">
+										<ul class="pagination pagination-sm">
+ 											<li class="disabled"><span>&laquo;</span></li>
+  											<li><span>1</span></li>
+  											<li class="disabled"><span>&raquo;</span></li>
+										</ul>
+									</div>
+								</div>
+								<!--tag1_blog end-->
+								<!--tag2_blog start-->
+								<div id="tag2_blog" class="tag_blogs">
+									<div class="story">
+										<h3>再见，青春！</h3>
+										<p class="story_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;再过十几个小时，我就要踏上返乡的列车。此时此刻，窗外下了两天的雨才刚停歇，静坐在书桌前，我却心绪难平。
+    想起当初刚入学的情景，似乎还近在眼前。我依然记得，最早在新生群相识的那帮吃货们，姜总，兔子，侃爷，团长，时间，西北，海南，若若......  <a class="big-link" data-reveal-id="text_blog">阅读全文</a></p>
+    									<p class="date">2014年06月27日</p>
+									</div>
+									<div class="story">
+										<h3>家後--背後的故事</h3>
+										<p class="story_text">（一）家境的无奈<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他是家裏的独子，是父母手中的宝，可惜身体一直多病。爹在外做小本生意，积攒了些钱......  <a>阅读全文</a></p>
+										<p class="date">2014年06月01日</p>
+									</div>
+									<div class="story">
+										<h3>我的寻找实习之路</h3>
+										<p class="story_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其实很早就想写一篇文字，来记录一下自己这次寻找实习的历程。但是因为种种原因，一直没有成型。现在正在回家的火车上面，心血来潮，打算敲打下些文字以记录自己的这段故事......  <a>阅读全文</a></p>
+										<p class="date">2013年07月10日</p>
+									</div>
+									<div id="tag2_page" class="page">
+										<ul class="pagination pagination-sm">
+ 											<li class="disabled"><span>&laquo;</span></li>
+  											<li><span>1</span></li>
+  											<li class="disabled"><span>&raquo;</span></li>
+										</ul>
+									</div>
+								</div>
+								<!--tag2_blog end-->
+								<!--tag3_blog start-->
+								<div id="tag3_blog" class="tag_blogs">
+									<div class="tech">
+										<h3>Windows下Django开发环境配置</h3>
+										<p class="tech_text">最近利用Python开发网站，利用了Django这个比较流行的框架，现在把这个框架的配置过程简述如下......  <a>阅读全文</a></p>
+										<p class="date">2012年10月14日</p>
+									</div>
+									<div class="tech">
+										<h3>Goclipse中使用自己创建的package的方法</h3>
+										<p class="tech_text">今晚一直在尝试在主运行文件中导入自己创建的package，因为这牵扯到以后的分模块编程，所以必须得搞定......  <a>阅读全文</a></p>
+										<p class="date">2012年09月24日</p>
+									</div>
+									<div class="tech">
+										<h3>Goclipse中运行Go语言程序的配置</h3>
+										<p class="tech_text">昨晚和今天一上午分别在Windows7、Ubuntu 12.04LTS和Mac OS X上尝试配置了下Go语言的开发环境，安装Go语言倒是都没遇到什么问题......  <a>阅读全文</a></p>
+										<p class="date">2012年09月13日</p>
+									</div>
+									<div class="tech">
+										<h3>windows7平台下配置Apache+Python-CGI开发运行环境</h3>
+										<p class="tech_text">今天整个晚上都在捣鼓有关Python的WEB编程方面的技术，由于不想用python自带的服务器，所以考虑利用Apache服务器来开发和运行python的CGI网络脚本文件......  <a>阅读全文</a></p>
+										<p class="date">2012年09月08日</p>
+									</div>
+									<div id="tag3_page" class="page">
+										<ul class="pagination pagination-sm">
+ 											<li class="disabled"><span>&laquo;</span></li>
+  											<li><span>1</span></li>
+  											<li class="disabled"><span>&raquo;</span></li>
+										</ul>
+									</div>
+								</div>
+								<!--tag3_blog end-->
+								<!--tag4_blog start-->
+								<div id="tag4_blog" class="tag_blogs">
+									<div class="song">
+										<h3>家后</h3>
+										<audio src="../static/songs/家后.mp3" preload="auto" controls></audio>
+										<p class="date">2014年7月30日</p>
+									</div>
+									<div class="song">
+										<h3>我爱过</h3>
+										<audio src="../static/songs/我爱过.mp3" preload="auto" controls></audio>
+										<p class="date">2014年7月30日</p>
+									</div>
+									<div id="tag4_page" class="page">
+										<ul class="pagination pagination-sm">
+ 											<li class="disabled"><span>&laquo;</span></li>
+  											<li><span>1</span></li>
+  											<li class="disabled"><span>&raquo;</span></li>
+										</ul>
+									</div>
+								</div>
+								<!--tag4_blog end-->
+								<!--tag5_blog start-->
+								<div id="tag5_blog" class="tag_blogs">
+									<div class="picture">
+										<h3>红颜</h3>
+										<div class="container picture_container">
+											<div class="row">
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0319.jpg">
+												</div>
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0354.jpg">
+												</div>
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0356.jpg">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0350.jpg">
+												</div>
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/13993901993.jpg">
+												</div>
+											</div>
+											<p class="show_pictures"><a>阅览相册</a></p>
+										</div>
+										<p class="date">2014年07月30日</p>
+									</div>
+									<div class="picture">
+										<h3>毕业风景</h3>
+										<div class="container picture_container">
+											<div class="row">
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0438.jpg">
+												</div>
+												<div class="col-md-4">
+													<img class="pictures" src="../static/pictures/IMG_0502.jpg">
+												</div>
+											</div>
+											<p class="show_pictures"><a class="big-link" data-reveal-id="picture_blog">阅览相册</a></p>
+										</div>
+										<p class="date">2014年07月30日</p>
+									</div>
+									<div id="tag5_page" class="page">
+										<ul class="pagination pagination-sm">
+ 											<li class="disabled"><span>&laquo;</span></li>
+  											<li><span>1</span></li>
+  											<li class="disabled"><span>&raquo;</span></li>
+										</ul>
+									</div>
+								</div>
+								<!--tag5_blog end-->
 								<img id="blog_background" src="" class="img-responsive">
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="text_blog" class="reveal-modal">
+			<div class="detail">
+				<h3>再见，青春！</h3>
+  				<p>再过十几个小时，我就要踏上返乡的列车。此时此刻，窗外下了两天的雨才刚停歇，静坐在书桌前，我却心绪难平。
+    想起当初刚入学的情景，似乎还近在眼前。我依然记得，最早在新生群相识的那帮吃货们，姜总，兔子，侃爷，团长，时间，西北，海南，若若，铁男，安琪，新闻，漆玥，工程哥·····当中的好多人都好久不见了，不知道这些年过去，你们都还好吗？犹记得我们刚报到第二天就一起跑到鼓楼的找吃的，最后在青岛路的马氏菜馆搞了我们在南京的第一次聚餐。现在那家餐馆依然在，只是我们，却要各奔天涯了。我们这些人中终究可以走成两对情侣，倒也是真的极好的，想当初你们各种拉郎配，现在都只能存在回忆里，日后回想起来，却也会觉得十分有趣吧。
+    之后的军训，新生文艺汇演，百团大战，学生会、团委招新等活动，都在让我们以最快的速度褪去高中时一成不变的生活方式，进而更好的融入大学生活中。大一的时候自己一心想多参加点活动，多结交点人，所以参加了不少的社团。校团委实践部、校学生会体育部、院团委实践部、足协等。在这当中完成了很多活动的策划和组织，校团委实践部的第一支部歌的视频，校学生会体育部每次的督场任务，院团委实践部的女生节、篝火晚会等，有的时候虽然累点，因为要熬夜，第二天可能还要早起上课，但是我却乐在其中，因为有你们，校团委实践部的秦瑜洁、施桦、于磊、温志毅、王小虎，校学生会的杨菲苑、邱妍、黄毅、韩世祥、任禾，院团委实践部的烁姐、冰洁、文少、肖总、宇婷······
+    我在大学前一直都是唱很苦情的歌曲，甚至有一度自己很不喜欢听歌唱歌，直到遇到小79，跟她的合作让我重新找到了唱歌的乐趣。只可惜自她转系后再没有机会和她一起演绎。之后是院合唱团，吕指让我感受到了歌唱当中气息运用的方法，我不再像以前简单地凭感情唱歌，而会关注到音准和声音的稳定度。再后来，大二时候的十佳歌手大赛，让我遇到唐杰，她是那种第一眼给人以惊艳的姑娘，我们的合作很愉快，同时私底下也相谈甚欢。这几年下来可以说是互相扶持，但虽然看起来她需要我帮助的日子更多，其实是我更离不开她才对，因为在整个大学时代里，我可以倾心相交的人太少太少，很多时候心里话不知道可以向谁倾诉，而她，确是一个可以让我卸下所有防备倾心相谈的人。
+    其实我一直是一个情感很细腻的人，也许在大学里因为周围大环境的原因，我把自己的内心尽可能地隐藏起来，但这么多年过去，我依然没有失却初心。所以我才会在昨天晚上十一点的时候最后一次夜游校园，每一步都迈的那么沉重，连我自己都不知道平时只需要短短十几分钟的路程，我为什么走了将近一个小时。
+    然而，也许是因为学理工的原因，我周围情感细腻的人太少，也许少主算一个，但少主毕竟业务繁忙。所以我一直都是孤独的，直到大三的时候重遇蔡逸君。也许命运真的是跟我开了一个不大不小的玩笑，我们其实早在大一的时候就已经初见。那时候是一起合作主持篝火晚会，我们搭档游戏环节。我印象中那个时候她就是一个笑的很纯真的小女孩，结果没想到大三的时候见到她，已经变得完全认不出来了。看起来真的太成熟，成熟的令人感到有点脊背发凉。但深入交谈之后，才发现她也是一个情感极其细腻的人，我虽然嘴上一直调侃她，但其实内心却十分珍惜这个朋友，因为这样的人我找了太久太久了。最近看她的照片，似乎又有回到当年的那种感觉，也许很多时候生活就是这样，兜兜转转一个圈，多年过去又会回到最初的起点。
+    身在软院，自然也是少不了各种项目以及各种deadline的摧残。记得大一时候EL大赛，第一次以leader身份带队，佳伟、歆歆、周帆、于一帆，我依然记得我们在大伙312连续通宵的那几个夜晚。看着一个项目从无到有的诞生，那是第一次体会到编程之美，也是我第一次觉得带领团队去完成一个项目是那么有成就感的事情。从那之后的两次软工课程作业，我都是leader，有幸得遇婉楠，一直和我在一个团队里，我们之间建立的情谊才算是真正的革命友谊吧。从大一在吉他社的课程上第一次相遇，到之后软工二第一次的成功合作，然后到软工三第一次带队失败的经历，再到创新项目让你第一次体验带队之感，哪怕到后来实习我们都还是上下楼，这不得不说是一种缘分。我们见证了彼此的成长和变化，这次却终究要各奔前程。
+    回忆里的画面太多，如果要一个个回忆，恐怕就算写成部传记都要分个上下集。何况写到这里，天已微明，时间已经不多，而要说的话却根本说不尽。罢了，就写到这里吧···长时间不写文，早就没有了当年的那种情怀，支离破碎的把一些章节拼凑在一起，只是为了将来看到可以追忆那些年的青春韶华。
+    蛾眉这样短，而天涯却那般长。终于还是走到这一天，要奔向各自的世界，没人能取代记忆中的你，和那段青春岁月。
+    长夜破晓，再见青春！</p>
+    			<p class="date">2014年06月27日</p>
+    		</div>
+			<a class="close-reveal-modal">×</a>
+		</div>
+		<div id="picture_blog" class="reveal-modal">
+			<div class="detail">
+				<h3>毕业风景</h3>
+				<div class="container detail_pictures">
+					<div class="row">
+						<div class="col-md-12">
+							<img class="pictures" src="../static/pictures/IMG_0438.jpg">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<img class="pictures" src="../static/pictures/IMG_0502.jpg">
+						</div>
+					</div>
+					<div class="page">
+						<ul class="pagination pagination-sm">
+ 							<li class="disabled"><span>&laquo;</span></li>
+  							<li><span>1</span></li>
+  							<li class="disabled"><span>&raquo;</span></li>
+						</ul>
 					</div>
 				</div>
 			</div>
