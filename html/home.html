@@ -12,7 +12,6 @@
 		<script src="../bootstrap/js/bootstrap.min.js"></script>
 		<script src="../static/js/audioplayer.js"></script>
 		<script src="../static/js/jquery.reveal.js"></script>
-		<script src="../static/js/common.js"></script>
 	</head>
 	<body>
 		<div id="content" class="container">
@@ -21,20 +20,20 @@
 					<div id="per_info_content" class="container">
 						<div class="row">
 							<div class="col-md-2">
-								<img id="photo" src="../static/img/photo.jpg" class="img-responsive">
+								<img id="photo" src="" class="img-responsive">
 							</div>
 						</div>
 						<div id="name" class="row per_text">
-							<div class="col-md-2"><p class="text-center">姓名: 张夏挺</p></div>
+							<div class="col-md-2"><p class="text-center"></p></div>
+						</div>
+						<div id="en_name" class="row per_text">
+							<div class="col-md-2"><p class="text-center"></p></div>
+						</div>
+						<div id="age" class="row per_text">
+							<div class="col-md-2"><p class="text-center"></p></div>
 						</div>
 						<div class="row per_text">
-							<div class="col-md-2"><p class="text-center">英文名: Pavel</p></div>
-						</div>
-						<div class="row per_text">
-							<div class="col-md-2"><p class="text-center">年龄: 22</p></div>
-						</div>
-						<div class="row per_text">
-							<div class="col-md-2"><p class="text-center" style="display:inline;">邮箱: </p><p class="text-center" style="font-size:10px; display:inline;">zxtysm@gmail.com</p></div>
+							<div class="col-md-2"><p class="text-center" style="display:inline;">邮箱: </p><p id="email" class="text-center" style="font-size:10px; display:inline;"></p></div>
 						</div>
 					</div>
 					<img src="../static/img/per_info.png" class="img-responsive">
@@ -42,11 +41,11 @@
 				<div id="blog_info" class="col-md-9">
 					<div class="container">
 						<div id="nav_text" class="row nav_text">
-							<div class="col-md-1 col-md-offset-2"><p class="text-center">不吐不快</p></div>
-							<div class="col-md-1"><p class="text-center">我的故事</p></div>
-							<div class="col-md-1"><p class="text-center">技术杂谈</p></div>
-							<div class="col-md-1"><p class="text-center">我是歌手</p></div>
-							<div class="col-md-1"><p class="text-center">泛黄记忆</p></div>
+							<div class="col-md-1 col-md-offset-2"><p class="text-center"></p></div>
+							<div class="col-md-1"><p class="text-center"></p></div>
+							<div class="col-md-1"><p class="text-center"></p></div>
+							<div class="col-md-1"><p class="text-center"></p></div>
+							<div class="col-md-1"><p class="text-center"></p></div>
 						</div>
 						<div id="nav" class="row">
 							<div class="col-md-1 col-md-offset-2">
@@ -62,9 +61,6 @@
 									<img id="tag2" src="../static/img/tag2.png" class="img-responsive tags">
 									<ul id="tag2_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
-										<li>情感之路</li>
-										<li>散文杂记</li>
-										<li>漫漫旅途</li>
 									</ul>
 								</div>
 							</div>
@@ -73,15 +69,6 @@
 									<img id="tag3" src="../static/img/tag3.png" class="img-responsive tags">
 									<ul id="tag3_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
-										<li>编程语言</li>
-										<li>Web开发</li>
-										<li>数据库</li>
-										<li>无线开发</li>
-										<li>算法</li>
-										<li>操作系统</li>
-										<li>网络</li>
-										<li>项目管理</li>
-										<li>产品设计</li>
 									</ul>
 								</div>
 							</div>
@@ -90,10 +77,6 @@
 									<img id="tag4" src="../static/img/tag4.png" class="img-responsive tags">
 									<ul id="tag4_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
-										<li>伤情</li>
-										<li>中国风</li>
-										<li>人生</li>
-										<li>摆渡人</li>
 									</ul>
 								</div>
 							</div>
@@ -102,10 +85,6 @@
 									<img id="tag5" src="../static/img/tag5.png" class="img-responsive tags">
 									<ul id="tag5_nav" class="nav_ul">
 										<li class="nav_all">全部</li>
-										<li>旅程纪念</li>
-										<li>同学少年</li>
-										<li>工作掠影</li>
-										<li>大千世界</li>
 									</ul>
 								</div>
 							</div>
@@ -114,33 +93,6 @@
 							<div class="col-md-7 col-md-offset-1">
 								<!--tag1_blog start-->
 								<div id="tag1_blog" class="tag_blogs">
-									<div class="state">
-										<p class="state_text">告别世界杯，迎来新赛季~期待蓝军可以有好的成绩~</p>
-										<p class="date">2014年07月14日</p>
-									</div>
-									<div class="state">
-										<p class="state_text">在火车上看了张艺谋的《我的父亲母亲》，简单的故事情节，却差点泪奔······终于知道章子怡为什么可以一炮而红，这部片里的演绎真的相当到位。</p>
-										<p class="date">2014年06月27日</p>
-									</div>
-									<div class="state">
-										<p class="state_text">现在越来越觉得闽南语的一些经典老歌相当让人回味无穷······《花香》、《家后》，一首唱给母亲，一首唱给爱人，无论是歌词还是旋律，都透出那个时代人们的价值观和对音乐的追求。现在这样子的歌好难遇到了······</p>
-										<p class="date">2014年05月31日</p>
-									</div>
-									<div class="state">
-										<p class="state_text">风居住的街道······矶村由纪子的曲子让人听了很舒服······</p>
-										<p class="date">2014年05月30日</p>
-									</div>
-									<div class="state">
-										<p class="state_text">从微博上看到说今晚《舌尖上的中国》第二季要播出了······各位吃货们准备好吧······</p>
-										<p class="date">2014年04月18日</p>
-									</div>
-									<div id="tag1_page" class="page">
-										<ul class="pagination pagination-sm">
- 											<li class="disabled"><span>&laquo;</span></li>
-  											<li><span>1</span></li>
-  											<li class="disabled"><span>&raquo;</span></li>
-										</ul>
-									</div>
 								</div>
 								<!--tag1_blog end-->
 								<!--tag2_blog start-->
@@ -321,9 +273,13 @@
 					</div>
 				</div>
 			</div>
+			<a class="close-reveal-modal">×</a>
 		</div>
 		<div id="background">
 			<img src="../static/img/background.jpg" class="img-responsive">
 		</div>
 	</body>
+	<script src="../static/js/common.js"></script>
+	<script src="../static/js/ajax.js"></script>
+	<script src="../static/js/main.js"></script>
 </html>

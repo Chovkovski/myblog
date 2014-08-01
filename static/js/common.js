@@ -2,49 +2,22 @@ function replace_tag(tag, tag_name) {
 	$(tag).attr("src", "../static/img/" + tag_name);
 }
 
-$(document).ready(function() {
-	$("audio").audioPlayer();
-
-	$(".tags").hover(
-		function() {
-			replace_tag(this, $(this).attr("id") + "_checked.png");
-			var tag_nav = "#" + $(this).attr("id") + "_nav";
-			$(".nav").css("z-index", "50");
-			$(tag_nav).css("visibility", "visible");
-		},
-		function() {
-			replace_tag(this, $(this).attr("id") + ".png");
+function construct_li_text(count) {
+	var li_text = ""
+	for (var index = 1; index <= count; index++) {
+		if (index == 1) {
+			li_text += "<li class='active'><span>" + index + "</span></li>";
+		} else {
+			li_text += "<li><span>" + index + "</span></li>";
 		}
-	);
+	}
+	return li_text;
+}
 
-	$(".nav").mouseleave(function() {
-		$(this).find("ul").css("visibility", "hidden");
-		$(".nav").css("z-index", "-2");
-	});
-
-	$(".nav_ul").hover(
-		function() {
-			$(".nav").css("z-index", "50");
-		},
-		function() {
-			$(".nav").css("z-index", "-2");
-		}
-	);
-
-	$(".nav_ul li").click(function() {
-		var tag_id = $(this).parent().prev().attr("id");
-		$("#blog_background").attr("src", "../static/img/" + tag_id + "_content.png");
-		$(".tag_blogs").css("visibility", "hidden");
-		$("#" + tag_id + "_blog").css("visibility", "visible");
-	});
-
-	$(".nav_ul li").hover(
-		function() {
-			$(this).css("color", "#fff");
-		},
-		function() {
-			$(this).css("color", "#000");
-		}
-	);
-
-});	
+function pagination(sum) {
+	if (sum == 0) { return ""; } 
+	var page_text = "";
+	var count = parseInt((sum - 1) / 5) + 1;
+	page_text = "<ul class='pagination pagination-sm'>" + ((sum > 25) ? construct_li_text(5) : construct_li_text(count)) + "</ul>";
+	return page_text;
+}
