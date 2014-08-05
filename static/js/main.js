@@ -1,6 +1,4 @@
 $(document).ready(function() {
-	$("audio").audioPlayer();
-
 	$(".tags").hover(
 		function() {
 			replace_tag(this, $(this).attr("id") + "_checked.png");
@@ -29,7 +27,5 @@ $(document).ready(function() {
 
 	load_person_info();
 	load_nav_info();
-
-	$("#tag1_nav li").click(load_state());
 
 });	
