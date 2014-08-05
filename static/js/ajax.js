@@ -359,7 +359,9 @@ function load_nav_info() {
 
 			$(".nav_ul li").click(function() {
 				var tag_id = $(this).parent().prev().attr("id");
-				$("#blog_background").attr("src", "../static/img/" + tag_id + "_content.png");
+				$("#blog_background").remove();
+				$("#tag_blogs").append("<img id='blog_background' src='../static/img/" + tag_id + "_content.png' class='img-responsive'>");
+				/**$("#blog_background").attr("src", "../static/img/" + tag_id + "_content.png");**/
 				$(".tag_blogs").css("visibility", "hidden");
 				$("#" + tag_id + "_blog").css("visibility", "visible");
 			});
