@@ -232,6 +232,7 @@ body {
 .pictures {
 	width: 100%;
 	height: auto;
+	border-radius: 5px;
 }
 
 .show_pictures {

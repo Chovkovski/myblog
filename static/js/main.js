@@ -27,5 +27,4 @@ $(document).ready(function() {
 
 	load_person_info();
 	load_nav_info();
-
 });	

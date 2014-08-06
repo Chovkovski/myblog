@@ -146,6 +146,7 @@ function parse_text_blog(task, blog_id) {
 	});
 }
 
+/* 载入故事文章 */
 function load_lite_blogs(tag) {
 	$.ajax({
 		type: "get",
@@ -168,7 +169,7 @@ function load_lite_blogs(tag) {
 				jsonp: "callback",
 				success: function(result) {
 					var num = result["num"];
-					$("#tag2_blog").append("<div id='tag2_page' class='page'>" + pagination(num) + "</div>");
+					$("#tag2_blog").append("<div id='tag2_page' name='" + tag + "' class='page'>" + pagination(num) + "</div>");
 
 					$("#tag2_page ul li").click(function() {
 						if (!$(this).hasClass("active")) {
@@ -177,7 +178,7 @@ function load_lite_blogs(tag) {
 							$(".story").remove();
 							var index = $(this).text();
 							var start = (parseInt(index) - 1) * 5;
-							var tag = $(this).text();
+							var tag = $("#tag2_page").attr("name");
 							$.ajax({
 								type: "get",
 								url: "http://localhost:8888",
@@ -203,6 +204,7 @@ function load_lite_blogs(tag) {
 	});
 }
 
+/* 载入技术文章 */
 function load_tech_blogs(tag) {
 	$.ajax({
 		type: "get",
@@ -225,7 +227,7 @@ function load_tech_blogs(tag) {
 				jsonp: "callback",
 				success: function(result) {
 					var num = result["num"];
-					$("#tag3_blog").append("<div id='tag3_page' class='page'>" + pagination(num) + "</div>");
+					$("#tag3_blog").append("<div id='tag3_page' name='" + tag + "' class='page'>" + pagination(num) + "</div>");
 
 					$("#tag3_page ul li").click(function() {
 						if (!$(this).hasClass("active")) {
@@ -234,7 +236,7 @@ function load_tech_blogs(tag) {
 							$(".tech").remove();
 							var index = $(this).text();
 							var start = (parseInt(index) - 1) * 5;
-							var tag = $(this).text();
+							var tag = $("#tag3_page").attr("name");
 							$.ajax({
 								type: "get",
 								url: "http://localhost:8888",
@@ -293,7 +295,7 @@ function load_song_blogs(tag) {
 				jsonp: "callback",
 				success: function(result) {
 					var num = result["num"];
-					$("#tag4_blog").append("<div id='tag4_page' class='page'>" + pagination(num) + "</div>");
+					$("#tag4_blog").append("<div id='tag4_page' name='" + tag + "' class='page'>" + pagination(num) + "</div>");
 
 					$("#tag4_page ul li").click(function() {
 						if (!$(this).hasClass("active")) {
@@ -302,7 +304,7 @@ function load_song_blogs(tag) {
 							$(".song").remove();
 							var index = $(this).text();
 							var start = (parseInt(index) - 1) * 5;
-							var tag = $(this).text();
+							var tag = $("#tag4_page").attr("name");
 							$.ajax({
 								type: "get",
 								url: "http://localhost:8888",
@@ -319,6 +321,159 @@ function load_song_blogs(tag) {
 
 					first_li_click("tag4_page", num);
 					last_li_click("tag4_page", num);
+				}
+			});
+		}
+	});
+}
+
+function parse_album_summary(result) {
+	var len = result.length;
+	var div_text = "";
+	for (var count = 0; count < len; count++) {
+		var album = result[count];
+		var title = album["album"];
+		div_text += "<div class='picture'><h3>" + title + "</h3><div class='container picture_container'><div class='row'>";
+		var summary = album["summary"];
+		var summary_len = summary.length;
+		for (var index = 0; index < summary_len; index++) {
+			picture = summary[index];
+			src = picture["src"];
+			div_text += "<div class='col-md-4'><img class='pictures' src='" + src +"'></div>"
+		}
+		div_text += "</div><p class='show_pictures'><a class='big-link' data-reveal-id='picture_blog'>阅览相册</a></p></div></div>";
+	}
+	return div_text;
+}
+
+function parse_album(result, album) {
+	$(".item").remove();
+	$(".picture_nav").remove();
+	var len = result.length;
+	var div_text = "";
+	var nav_text = "";
+	$("#picture_blog .detail h3").text(album);
+	for (var count = 0; count < len; count++) {
+		var picture = result[count];
+		var src = picture["src"];
+		var date = picture["date"].split("-");
+		date = date[0] + "年" + date[1] + "月" + date[2] + "日";
+		if (count == 0) {
+			div_text += "<div class='item active'><img class='pictures' src='" + src + "'></div>";	
+			nav_text += "<li class='picture_nav active' data-target='#carousel-example-generic' data-slide-to='0'></li>";
+		} else {
+			div_text += "<div class='item'><img class='pictures' src='" + src + "'></div>";
+			nav_text += "<li class='picture_nav' data-target='#carousel-example-generic' data-slide-to='" + count + "'></li>";
+		}
+	}
+
+	$("#slides_nav").append(nav_text);
+	$("#slides").append(div_text);
+	$('.carousel').carousel();
+}
+
+function load_album(album) {
+	$.ajax({
+		type: "get",
+		url: "http://localhost:8888",
+		data: { "task_name" : "get_album_picture", "album" : album },
+		dataType: "jsonp",
+		jsonp: "callback",
+		success: function(result) {
+			$("#slides_page").remove();
+			parse_album(result, album);
+
+			$.ajax ({
+				type: "get",
+				url: "http://localhost:8888",
+				data: { "task_name" : "get_album_picture_num", "album" : album },
+				dataType: "jsonp",
+				jsonp: "callback",
+				success: function(result) {
+					var num = result["num"];
+					$("#picture_blog .detail_pictures").append("<div id='slides_page' name='" + album + "' class='page'>" + pagination(num) + "</div>");
+
+					$("#slides_page ul li").click(function() {
+						if (!$(this).hasClass("active")) {
+							$("#slides_page ul li").removeClass("active");
+							$(this).addClass("active");
+							$(".item").remove();
+							$(".picture_nav").remove();
+							var index = $(this).text();
+							var start = (parseInt(index) - 1) * 5;
+							var album = $("#slides_page").attr("name");
+							$.ajax({
+								type: "get",
+								url: "http://localhost:8888",
+								data: { "task_name" : "get_album_picture", "album" : album },
+								dataType: "jsonp",
+								jsonp: "callback",
+								success: function(result) {
+									parse_album(result, album);
+								}
+							});
+						}
+					});
+
+					first_li_click("slides_page", num);
+					last_li_click("slides_page", num);
+				}
+			});
+		}
+	});
+}
+
+function load_album_blogs(tag) {
+	$.ajax({
+		type: "get",
+		url: "http://localhost:8888",
+		data: { "task_name" : "get_album_summary", "tag" : tag },
+		dataType: "jsonp",
+		jsonp: "callback",
+		success: function(result) {
+			$("#tag5_blog").append(parse_album_summary(result));
+			$("#tag5_blog .big-link").click(function() {
+				var album = $(this).parent().parent().prev().text();
+				load_album(album);
+			});
+
+			$.ajax ({
+				type: "get",
+				url: "http://localhost:8888",
+				data: { "task_name" : "get_album_num", "tag" : tag },
+				dataType: "jsonp",
+				jsonp: "callback",
+				success: function(result) {
+					var num = result["num"];
+					$("#tag5_blog").append("<div id='tag5_page' name='" + tag + "' class='page'>" + pagination(num) + "</div>");
+
+					$("#tag5_page ul li").click(function() {
+						if (!$(this).hasClass("active")) {
+							$("#tag5_page ul li").removeClass("active");
+							$(this).addClass("active");
+							$(".picture").remove();
+							var index = $(this).text();
+							var start = (parseInt(index) - 1) * 5;
+							var tag = $("#tag5_page").attr("name");
+							$.ajax({
+								type: "get",
+								url: "http://localhost:8888",
+								data: { "task_name" : "get_album_summary", "start" : start, "tag" : tag },
+								dataType: "jsonp",
+								jsonp: "callback",
+								success: function(result) {
+									$("#tag5_page").before(parse_album_summary(result));
+									$("#tag5_blog .big-link").click(function() {
+										var album = $(this).parent().parent().prev().text();
+										load_album(album);
+									});
+								}
+							});
+						}
+					});
+
+					first_li_click("tag5_page", num);
+					last_li_click("tag5_page", num);
 				}
 			});
 		}
@@ -361,7 +516,6 @@ function load_nav_info() {
 				var tag_id = $(this).parent().prev().attr("id");
 				$("#blog_background").remove();
 				$("#tag_blogs").append("<img id='blog_background' src='../static/img/" + tag_id + "_content.png' class='img-responsive'>");
-				/**$("#blog_background").attr("src", "../static/img/" + tag_id + "_content.png");**/
 				$(".tag_blogs").css("visibility", "hidden");
 				$("#" + tag_id + "_blog").css("visibility", "visible");
 			});
@@ -384,6 +538,12 @@ function load_nav_info() {
 				$(".song").remove();
 				$("#tag4_page").remove();
 				load_song_blogs(tag);
+			});
+			$("#tag5_nav li").click(function() {
+				var tag = $(this).text();
+				$(".picture").remove();
+				$("#tag5_page").remove();
+				load_album_blogs(tag);
 			});
 		}
 	});
