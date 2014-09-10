@@ -121,7 +121,7 @@ function parse_text_blog_summary(result, text_type) {
 		var summary = lite["summary"];
 		var date = lite["date"].split("-");
 		date = date[0] + "年" + date[1] + "月" + date[2] + "日";
-		div_text += "<div class='" + text_type + "'><h3>" + title + "</h3><p class='" + text_type + "_text'>" + summary + "<a id= " + id + " class='big-link' data-reveal-id='text_blog'>阅读全文</a></p><p class='date'>" + date + "</p></div>";
+		div_text += "<div class='" + text_type + "'><h3>" + title + "</h3><div class='text_content " + text_type + "_text'>" + summary + "<p class='read_all'><a id= " + id + " class='big-link' data-reveal-id='text_blog'>阅读全文</a></p></div><p class='date'>" + date + "</p></div>";
 	}
 	return div_text;
 }
@@ -139,9 +139,13 @@ function parse_text_blog(task, blog_id) {
 			var content = result["content"];
 			var date = result["date"].split("-");
 			date = date[0] + "年" + date[1] + "月" + date[2] + "日";
+			$("#text_detail div").remove();
 			$("#text_detail h3").text(title);
-			$("#text_detail p:eq(0)").text(content);
-			$("#text_detail p:eq(1)").text(date);
+			$("#text_detail").append("<div>" + content + "</div>")
+			$("#text_detail").append("<div><p class='date'>" + date + "</p></div>");
+			$("#text_detail div p").css("background-color", "transparent");
+			$("#text_detail div span").css("background-color", "transparent");
+			$("#text_detail div h4").css("background-color", "transparent");
 		}
 	});
 }
@@ -156,6 +160,8 @@ function load_lite_blogs(tag) {
 		jsonp: "callback",
 		success: function(result) {
 			$("#tag2_blog").append(parse_text_blog_summary(result, "story"));
+			$(".text_content p").css("background-color", "transparent");
+			$(".text_content span").css("background-color", "transparent");
 			$("#tag2_blog .big-link").click(function() {
 				var blog_id = $(this).attr("id");
 				parse_text_blog("get_lite_blog", blog_id);
@@ -187,6 +193,8 @@ function load_lite_blogs(tag) {
 								jsonp: "callback",
 								success: function(result) {
 									$("#tag2_page").before(parse_text_blog_summary(result, "story"));
+									$(".text_content p").css("background-color", "transparent");
+									$(".text_content span").css("background-color", "transparent");
 									$("#tag2_blog .big-link").click(function() {
 										var blog_id = $(this).attr("id");
 										parse_text_blog("get_lite_blog", blog_id);
@@ -214,6 +222,8 @@ function load_tech_blogs(tag) {
 		jsonp: "callback",
 		success: function(result) {
 			$("#tag3_blog").append(parse_text_blog_summary(result, "tech"));
+			$(".text_content p").css("background-color", "transparent");
+			$(".text_content span").css("background-color", "transparent");
 			$("#tag3_blog .big-link").click(function() {
 				var blog_id = $(this).attr("id");
 				parse_text_blog("get_tech_blog", blog_id);
@@ -245,6 +255,7 @@ function load_tech_blogs(tag) {
 								jsonp: "callback",
 								success: function(result) {
 									$("#tag3_page").before(parse_text_blog_summary(result, "tech"));
+									$("#text_content p").css("background-color", "transparent");
 									$("#tag3_blog .big-link").click(function() {
 										var blog_id = $(this).attr("id");
 										parse_text_blog("get_tech_blog", blog_id);
@@ -405,7 +416,7 @@ function load_album(album) {
 							$.ajax({
 								type: "get",
 								url: "http://localhost:8888",
-								data: { "task_name" : "get_album_picture", "album" : album },
+								data: { "task_name" : "get_album_picture", "album" : album, "start" : start },
 								dataType: "jsonp",
 								jsonp: "callback",
 								success: function(result) {
@@ -515,7 +526,7 @@ function load_nav_info() {
 			$(".nav_ul li").click(function() {
 				var tag_id = $(this).parent().prev().attr("id");
 				$("#blog_background").remove();
-				$("#tag_blogs").append("<img id='blog_background' src='../static/img/" + tag_id + "_content.png' class='img-responsive'>");
+				$("#tag_blogs").append("<img id='blog_background' src='http://pavelblog.oss-cn-hangzhou.aliyuncs.com/imgs/" + tag_id + "_content.png' class='img-responsive'>");
 				$(".tag_blogs").css("visibility", "hidden");
 				$("#" + tag_id + "_blog").css("visibility", "visible");
 			});

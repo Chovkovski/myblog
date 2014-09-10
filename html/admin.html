@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+	<head>
+		<title>渌水亭</title>
+		<meta charset="utf-8">
+		<link href="../static/img/favicon.ico" type="image/x-icon" rel="icon">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../trumbowyg/design/css/trumbowyg.css">
+		<script src="../static/js/jquery.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script src="../trumbowyg/trumbowyg.min.js"></script>
+	</head>
+	<body>
+		<div id="text">
+			<form action="#">
+				<textarea id="summary" class="editor" cols="30" rows="10"></textarea>
+				<textarea id="form-content" class="editor" cols="30" rows="10"></textarea>
+			</form>
+			<button id="submit" type="button" class="btn btn-primary">提交</button>
+		</div>
+	</body>
+	<script>
+		$('#summary').trumbowyg({
+                lang: 'fr',
+                fixedBtnPane: true,
+                fixedFullWidth: true,
+                semantic: true,
+                resetCss: true,
+                autoAjustHeight: true,
+                autogrow: true
+            });
+
+		$('#form-content').trumbowyg({
+                lang: 'fr',
+                fixedBtnPane: true,
+                fixedFullWidth: true,
+                semantic: true,
+                resetCss: true,
+                autoAjustHeight: true,
+                autogrow: true
+            });
+
+		$("#submit").click(function() {
+			var summary = $("#summary").trumbowyg("html");
+			var text = $("#form-content").trumbowyg("html");
+			$.ajax({
+				type: "post",
+				url: "http://localhost:8888/upload",
+				data: { "task_name" : "upload_tech", "tag_id" : 5, "title" : "Windows下Django开发环境配置", "summary" : summary, "content" : text, "date" : "2012-10-14" },
+				success: function(result) {
+					
+				}
+			});
+		});
+	</script>
+</html>

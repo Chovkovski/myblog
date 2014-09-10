@@ -1,5 +1,5 @@
 function replace_tag(tag, tag_name) {
-	$(tag).attr("src", "../static/img/" + tag_name);
+	$(tag).attr("src", "http://pavelblog.oss-cn-hangzhou.aliyuncs.com/imgs/" + tag_name);
 }
 
 function construct_li_text(count) {

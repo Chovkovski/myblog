@@ -262,3 +262,15 @@ body {
 	padding-bottom: 15px;
 }
 
+.read_all {
+	text-align: right;
+}
+
+.copyright {
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	display: block;
+	position: absolute;
+	z-index: 30;
+}
